@@ -1,3 +1,4 @@
+
 :root{
 --purple100: hsl(254, 88%, 90%);
 --purple500: hsl(256, 67%, 59%);
@@ -24,6 +25,7 @@ body{
 .container{
     width: 90% ;
     margin: 2.5rem auto ;
+    background-color: rgba(155, 155, 155, 0.119);
 }
 .item{
     margin-bottom:2.5rem;
@@ -49,6 +51,7 @@ h2,
 h3{
     font-weight: 700;
 }
+
 #star h1{
     font-size: 4.2rem;
     color: var(--white);
@@ -75,22 +78,26 @@ h3{
 }
 #platform{
     padding: 1rem;
-    background-color: rgba(245, 242, 238, 0.356);
+    background-color: white;
     border-radius: 1rem;
 }
 #posting-schedule h3{
     font-size: 2.3rem;
     line-height: 2rem;
-    margin-bottom: 2rem;    
+    margin-top: 2rem;
+      
 }
 #posting-schedule img{
-    width: 65%;    
-    margin-bottom: -2px;
+    width: 65%;
+   
+    margin-top: 2.5rem;
+    margin-bottom: -2.5rem;     
 }
 #posting-schedule{
     background-color: var(--yellow500);
     padding: 2rem 2rem 0rem 2rem ;
     border-radius: 1rem;
+    overflow: hidden;
 }
 #publish h3{
    font-size: 2.3rem;
@@ -138,7 +145,7 @@ h3{
 #audience-growth{
     padding: 2rem 2rem;
     border-radius: 1rem;
-    background-color: rgba(240, 248, 255, 0.367);
+    background-color: rgb(249, 249, 249);
 }
 #create-post h2{
     font-size: 2.9rem;
@@ -169,109 +176,191 @@ h3{
     padding: 1.5rem 2rem;
     border-radius: 1rem;
 }
+@media screen and (min-width:768px){
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        
+        padding: 4rem;
+    }
+    .item{
+        flex-basis: 45%;
+    }
 
+}
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:1440px) {
     .item{
         margin-bottom: 0;
     }
     p{
         font-size: 2.5rem;
-        margin-bottom: 1.5rem;
+    }
+    .container{
+        max-width: 1440px;
+        height: 980px;
+        overflow: hidden;
+        margin: 0 auto;
+       
+        background-color: rgba(253, 253, 253, 0.293);
     }
     main{
+        width: 1280px;
+        padding:2rem;
+        margin: 0 auto;
+        text-align: center;
+        background-color: var(--white);
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-row: auto auto auto;
-        grid-auto-flow: row;
-        gap: 1.5rem;
+        grid-template-areas: 'area1 area2 area2 area3'
+                             'area1 area2 area2 area3'
+                             'area1 area2 area2 area3'
+                             'area1 area2 area2 area3'
+                             'area1 area5 area7 area3'
+                             'area6 area5 area7 area3'
+                             'area6 area5 area7 area3'
+                             'area6 area8 area4 area4'
+                             'area6 area8 area4 area4'
+                             'area6 area8 area4 area4'
+        ;
+        justify-content: space-evenly;
+        gap: 1.5rem 2rem;
     }
+    
+    
     #create-post{
-       grid-area: 1/1/2/2;
-       margin-bottom: -20rem;
-       text-align: center;
-       padding: 3rem 1rem;
-       
+       grid-area: area1;
+       max-width: 300px;
+       max-height: 460px;
+       text-align: left;
+       padding: 2rem;
     }
-    #create-post h2{
-        font-size: 7rem;
-        line-height: 6rem;
-        margin-bottom: 1.5rem;
+    #create-post h2 {
+        margin-top: 3rem;
+          font-size:  5rem  ;
+          line-height:4.5rem;
     }
+    #create-post img{
+        width: 100%;
+    }
+   
     #star{
-        grid-area: 1/2/2/4;
-        padding: 1.5 3rem;
+        grid-area: area2;
+        max-width: 620px;
+        height: 365px; 
+        padding: 1.5rem;  
     }
     #star h1{
-        font-size: 9rem;
-        line-height: 8rem;
-    }
-    #star p{
-        margin-bottom: 1.5rem;
+        font-size: 7rem;
+        line-height: 6.8rem;
+
     }
     #star img{
-        width: 30%;
+        width :250px
     }
+   
     #publish{
-       grid-area: 1/4/3/5;
+       grid-area: area3;
+       max-height: 650px;
+       max-width: 300px;
+       text-align: start;
+       padding: 0;
+       overflow: hidden;
     }
+    #publish h3{
+        font-size: 4rem;
+        line-height: 3.8rem;
+        padding: 2.5rem 2rem;
+    }
+    #publish img{
+        height:auto;
+        width: 300px;
+        margin-left: 2.5rem; 
+    }
+    #publish p{
+        padding: 1.5rem 2rem;
+    }
+
     #ai-content{
-        grid-area: 2/1/4/2;
-        padding-top: 2rem;
-        margin-top: 20rem;  
+        grid-area: area6;
+        max-height: 460px;
+        max-width: 300px;
+        padding: 2rem 2.5rem;
+        text-align:start;
     }
     #ai-content h2{
-        font-size: 5rem;
-        line-height: 5rem;
+        font-size: 4.5rem;
+        line-height: 4.2rem;
     }
     #ai-content img{
-        text-align: center;
+        width: 100%;
     }
+   
+  
 
     #platform{
-      grid-area: 2/2/3/3;
-      padding: 3rem 3rem; 
+      grid-area: area5;
+      max-width: 300px;
+      max-height: 270px;
+      text-align: start;
+      overflow: hidden;
+      
     }
-   #platform h3{
-    font-size: 5rem;
-    line-height: 4rem;
-    margin: 1.5rem 0;
-   }
+    #platform img{
+        height:100px;
+        width:400px ;
+        margin-left:4.5rem;      
+    }
+    #platform h3{
+        margin-top: 1.5rem;
+        margin-left: 3rem;
+        font-size: 3.2rem;
+        line-height: 3rem;
+    }
+ 
     #posting-schedule{
-        grid-area: 2/3/3/4;   
+        grid-area: area7;
+        max-width: 300px;
+        height: 270px;
+        padding: 2rem;
+        text-align: start;  
+        overflow: hidden; 
+    }
+    #posting-schedule img{
+        width: 100%;
     }
     #posting-schedule h3{
-        font-size: 5rem;
-        line-height: normal;
+        font-size: 3rem;
+        line-height: 2.8rem; ;
     }
-
-
 
     #audience-growth{
-      grid-area: 3/2/4/3;
-      padding: 1.5rem;
-      text-align: center;
+      grid-area: area8;
+      max-width: 300px;
+      max-height: 270px;
+      text-align: start;
     }
     #audience-growth h2{
-        font-size: 7rem;
+        font-size: 5.5rem;
     }
   
 
     #content{
-        grid-area: 3/3/4/5;
+        max-height: 270px;
+        max-width: 620px;
+        grid-area:area4 ;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        padding: 3rem;
+     
     }
     #content img{
+        height: 250px;
         flex-basis: 50%;
-        max-width: 30%;
     }
     #content h2{
-        flex-basis: 50%;
-        font-size: 5rem;
-        line-height: normal;
+        font-size: 3.8rem;
+        line-height: 3.5rem;
     }
-    
+
 }
